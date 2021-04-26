@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+{%set d = list | random%}
+<h1>{{d['name']}} {{d['surname']}}</h1>
+{%set way = d['photo']%}
+<img src={{way}}>
+{% for i in d['professoins'] | sort %}
+<div>{{i}}</div>
+{%endfor%}
+{% endblock %}
